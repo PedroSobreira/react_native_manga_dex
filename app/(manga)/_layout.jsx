@@ -6,7 +6,7 @@ const MangaLayout = () => {
   return (
     <View>
       <Manga 
-        id="94a87fd5-250d-4058-9d33-88b6885ebfc2"
+        id="55ace2fb-e157-4d76-9e72-67c6bd762a39"
       />
     </View>
   )

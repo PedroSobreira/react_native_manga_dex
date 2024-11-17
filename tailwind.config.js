@@ -21,11 +21,18 @@ module.exports = {
             200: "#232533",
           },
 
-          whiteTest: "#FEFEFE",
-
           gray: "#5D5D5D",
           grayDark: "#4D4D4D",
           grayLightFaded: "#858585",
+          grayLight: "#F0F1F2",
+
+          orange: "#FF6740",
+
+
+          redStatus: "#FF0000",
+          greenStatus: "#04d000",
+          blueStatus: "#00c9f5",
+          orangeStatus: "#FF5733",
 
           textColor: "#363636"
         },

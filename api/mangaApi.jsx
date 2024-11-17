@@ -13,11 +13,11 @@ const fetchMangas = async () => {
         const cachedData = await AsyncStorage.getItem(url);
         if (cachedData) {
             response = JSON.parse(cachedData);
-            console.log("Loaded data from cache.");
+            console.log(`Loaded data from cache.  url: ${url}`);
         } else {
             response = await axios.get(url);
             await AsyncStorage.setItem(url, JSON.stringify(response));
-            console.log("Fetched and cached data from API.");
+            console.log(`Fetched and cached data from API.  url: ${url}`);
         }
 
         return response.data;
@@ -38,11 +38,11 @@ const fetchMangaById = async (id) => {
         const cachedData = await AsyncStorage.getItem(url);
         if (cachedData) {
             response = JSON.parse(cachedData);
-            console.log("Loaded data from cache.");
+            console.log(`Loaded data from cache.  url: ${url}`);
         } else {
             response = await axios.get(url);
             await AsyncStorage.setItem(url, JSON.stringify(response));
-            console.log("Fetched and cached data from API.");
+            console.log(`Fetched and cached data from API.  url: ${url}`);
         }
 
         return response.data;
@@ -55,7 +55,21 @@ const fetchMangaById = async (id) => {
 // Fetch aggregate data for a specific manga by ID
 const fetchMangaAggregate = async (id) => {
     try {
-        const response = await axios.get(endpoints.API_ENDPOINT_AGGREGATE({ id }));
+        //Get url 
+        const url = endpoints.API_ENDPOINT_AGGREGATE({ id });
+        let response;
+
+        //Use url as a key for the cache
+        const cachedData = await AsyncStorage.getItem(url);
+        if (cachedData) {
+            response = JSON.parse(cachedData);
+            console.log(`Loaded data from cache.  url: ${url}`);
+        } else {
+            response = await axios.get(url);
+            await AsyncStorage.setItem(url, JSON.stringify(response));
+            console.log(`Fetched and cached data from API.  url: ${url}`);
+        }
+
         return response.data;
     } catch (error) {
         console.error(`Error fetching manga aggregate ${id}:`, error);

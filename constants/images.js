@@ -8,9 +8,11 @@ import empty from "../assets/images/empty.png";
 import placeholderLastUpdatedItem from "../assets/images/placeholder-last_updated_item.png";
 import placeholderFlag from "../assets/images/placeholder-flag.png";
 import placeholderMangaCover from "../assets/images/placeholder-manga_cover.png";
+import chevronDown from "../assets/images/chevron-down-white.png";
+import chevronUp from "../assets/images/chevron-up-black.png";
 
 
 export default { 
     profile, thumbnail, cards, path, logo, logoSmall, empty, placeholderLastUpdatedItem, placeholderFlag,
-    placeholderMangaCover 
+    placeholderMangaCover, chevronDown, chevronUp
 };
